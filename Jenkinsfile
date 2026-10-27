@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        nodejs 'node18' // Must match the name configured in Global Tool Configuration
+        nodejs 'node18' 
     }
     stages {
         stage('Checkout') {
@@ -11,17 +11,17 @@ pipeline {
         }
         stage('Install') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
         stage('Test') {
             steps {
-                sh 'npm test'
+                bat 'npm test'
             }
         }
         stage('Build') {
             steps {
-                sh 'npm run build'
+                bat 'npm run build'
             }
         }
     }
